@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block title %}Geo Whale - Contact{% endblock %}
+{% block body %}
+
+<div class="contact">
+    <h1 class="titre-contact">Contactez-nous</h1>
+        <div class="container-contact100">
+			<div class="wrap-contact100">
+				<div class="contact100-pic js-tilt" data-tilt>
+					<img src="img/img-02.png" alt="IMG">
+				</div>
+
+				<form id="formulaire" class="contact100-form validate-form" method="POST" role="form">
+					<span class="contact100-form-title">
+						Envoyez nous un mail
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" id="nom" type="text" name="nom" placeholder="Nom">
+						<p class="error"></p>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" id="email" type="email" name="email" placeholder="Votre e-mail">
+						<p class="error"></p>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Message is required">
+						<textarea class="input100" id="message" name="message" placeholder="Message"></textarea>
+						<p class="error"></p>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-contact100-form-btn">
+						<button class="contact100-form-btn">
+							Envoyer
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+{% endblock %}

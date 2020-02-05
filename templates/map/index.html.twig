@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Geo Whale - Map
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="conteneur-map">
+		<div id="search-form">
+			<form id="search" name="search" action="traitement.php" method="POST">
+				<label class="label" for="species-select">Choisissez une espèce :</label>
+				<select name="species" id="species-select">
+					<option value="">--Choisissez ci-dessous--</option>
+					<option value="humpback">Baleine à bosse</option>
+					<option value="harbor porpoise">Marsouin</option>
+					<option value="gray whale">Baleine grise</option>
+					<option value="orca">Orque</option>
+				</select>
+				{# <label class="label" for="date-select">Choisissez une date :</label> #}
+
+				<label class="label">Choisissez une date :</label>
+				<input type="text" name="until" id="date" value="" min="2015-01-01" max="2032-12-31">
+				<script>
+
+					$(function () {
+$("#date").datepicker();
+});
+				</script>
+
+				{# <input type="date" id="date" name="date-select" min="2015-01-01" max="2032-12-31"> #}
+
+
+				<button type="submit" onclick="afficher()" id="submit">Rechercher</button>
+			</form>
+		</div>
+
+		<div id="map00">
+			<div id="loader" class="hidden">
+				<div class="contener_general">
+					<div class="contener_mixte">
+						<div class="ballcolor ball_1">&nbsp;</div>
+					</div>
+					<div class="contener_mixte">
+						<div class="ballcolor ball_2">&nbsp;</div>
+					</div>
+					<div class="contener_mixte">
+						<div class="ballcolor ball_3">&nbsp;</div>
+					</div>
+					<div class="contener_mixte">
+						<div class="ballcolor ball_4">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	{% endblock %}
+
+	{% block javascripts %}
+		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+		{{ encore_entry_script_tags('map') }}
+		{{ encore_entry_script_tags('app') }}
+	{% endblock %}

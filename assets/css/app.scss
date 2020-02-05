@@ -1,0 +1,415 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Questrial|Raleway|Syncopate&display=swap');
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "main.css";
+@import "util.css";
+@import "loader.css";
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        justify-content: flex-end;
+        margin-right: 30px;
+    }
+}
+
+$bleufonce: #ffffff;
+$bleu: #000000;
+$bleuclair: #7692FF;
+$titre1: 'Syncopate', sans-serif;
+$titre2: 'Raleway', sans-serif;
+$texte: 'Questrial', sans-serif;
+$thick : 3px;
+$pad : 0.7em;
+$extra : calc(#{$pad} * 1.2);
+$color : #3D518C;
+$offset-navbar : 100px;
+
+
+/////////////////// GENERAL
+
+body{
+    background-color: $bleu;
+}
+#nav{
+    border-bottom: 2px solid $bleuclair;
+    background-color: rgba(0,0,0,0.8);;
+    font-family: $titre2;
+    font-weight: bold;
+    font-size: 1.50rem;
+    text-transform: uppercase;
+    z-index: 1100;
+    #home{
+        color: $color;
+    }
+    ul li a{
+        color: $bleufonce;
+        transition: ease-in-out 0.1s;
+
+        &:hover{
+            color: $bleuclair;
+        }
+    }
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+#burger{
+    background-color: white;
+}
+
+#logo{
+    width: 100px;
+    height: auto;
+    margin-left: 30px;
+}
+.mr-auto, .mx-auto {
+    margin-right: unset !important;
+}
+
+.content{
+    padding-top: $offset-navbar;
+}
+
+//////////////////////////////////////
+
+/////////////////// HOME
+
+.home{
+    background-color: $bleu;
+    width: 100%;
+    height: 100%;
+    margin-top: -$offset-navbar;
+}
+.home .intro{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+.home .titre{
+    text-transform: none;
+    color: $bleufonce;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 30px;
+    font-family: $titre1;
+    font-weight: bold;
+    padding: 10px;
+    
+}
+.home .conteneur{
+    width: 100%;
+    height: 800px;
+    filter: grayscale(50%);
+}
+.home .conteneur .video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    opacity: 0.8;
+    position: relative;
+}
+.home .slogan{
+    display: flex;
+    align-items: flex-end;
+    font-size: 25px;
+    text-align: right;
+    color: $bleufonce;
+    font-family: $texte;
+    text-transform: none;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+/////////////// PAGE MAP ////////////////
+
+/////// FORM
+
+.conteneur-map{
+    #search-form{
+        display: flex;
+        width: 20%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 90%;
+        padding: 2%;
+        background-color: $color;
+        font-family: $texte;
+        #search{
+            background: white;
+            border-radius: 8px;
+            height: 100%;
+            width: 100%;
+            padding: 5%;
+            .label{
+                margin: 10px 0;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            #species-select{
+                width: 100%;
+                height: 30px;
+                border: 2px solid $bleuclair;
+                border-radius: 8px;
+                margin-bottom: 45%;
+                font-size: 16px;
+            }
+            #date{
+                border: 2px solid $bleuclair;
+                border-radius: 8px;
+                width: 100%;
+            }
+            #submit{
+                width: 100%;
+                height: 30px;
+                border: 2px solid $bleuclair;
+                border-radius: 8px;
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 30%;
+                transition: ease-in-out 0.2s;
+                &:hover{
+                    background-color: $bleuclair;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+////// MAP
+
+.conteneur-map{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    position: right;
+    align-items: flex-end;
+    justify-content: flex-end;
+    #map00{
+        height: 90%;
+        width: 80%;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-right: 30px;
+        #loader{
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,0.8);
+            position: absolute;
+            z-index: 1000;
+        }
+        .hidden{
+            visibility: hidden;
+        }
+        .visible{
+            visibility: visible;
+        }
+    }
+}
+// XXXXXXXXXXXX PAGE CONTACT XXXXXXXXXXXXX
+
+.contact{
+    .titre-contact{
+        color: $bleufonce;
+        height: 100px;
+        display:flex;
+        align-items: center;
+        justify-content: left;
+        font-size: 30px;
+        font-family: $titre1;
+        font-weight: bold;
+        padding: 30px;
+    }
+    .conteneur_2{
+        width: 100%;
+    }
+    .social-contact{
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .logo-contact{
+            justify-content: left;
+            .logo-social-contact{
+                width: 100px;
+                height: 100px;
+                padding: 10px;
+                &:hover{
+                    transform: rotateY(360deg);
+                    transition: ease-in-out 1s;
+                }
+            }
+        }
+    }
+    .formulaire-contact{
+        border: 2px solid $bleufonce;
+        text-align: center;
+        border-radius: 8px;
+    }
+}
+// XXXXXXXXXXXXXXXXXXXXXXXX FOOTER XXXXXXXXXXXXXXXX
+.social{
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+}
+.social .logo{
+    justify-content: center;
+    flex-direction: row;
+    margin-left: 30px;
+}
+.social .logo-social{
+    width: 80px;
+    height:auto;
+    padding: 10px;
+
+}
+.social .logo-social:hover{
+    transform: rotateY(360deg);
+    transition: ease-in-out 1s;
+}
+
+.boutton {
+    color: white;
+    padding: $pad $extra;
+    display: inline-block;
+    border: $thick solid transparent;
+    position: absolute;
+    font-size: 1.5em;
+    cursor: pointer;
+    letter-spacing: 0.07em;
+    padding-bottom: 1.3rem;
+    right: 0;
+    margin-right: 30px;
+    
+    .text {
+    font-family: $titre2;
+    transform: translate3d(0,$pad,0);
+    display: block;
+    transition: transform 0.4s cubic-bezier(.2,0,0,1) 0.4s;
+    color: $bleufonce;
+    }
+    
+    &:after {
+    position: absolute;
+    content: '';
+    bottom: -$thick;
+    left: $extra;
+    right: $extra;
+    height: $thick;
+    background: $color;
+    // z-index: -1;
+    transition:
+    transform 0.8s cubic-bezier(1,0,.37,1) 0.2s,
+    right 0.2s cubic-bezier(.04,.48,0,1) 0.6s,
+    left 0.4s cubic-bezier(.04,.48,0,1) 0.6s;
+    transform-origin: left;
+    }
+    
+    }
+    
+    .line {
+    position: absolute;
+    background: $color;
+    
+    &.-right,
+    &.-left {
+    width: $thick;
+    bottom: -$thick;
+    top: -$thick;
+    transform: scale3d(1,0,1);
+    }
+    
+    &.-top,
+    &.-bottom {
+    height: $thick;
+    left: -$thick;
+    right: -$thick;
+    transform: scale3d(0,1,1);
+    }
+    
+    &.-right {
+    right: -$thick;
+    transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.23s;
+    transform-origin: top;
+    }
+    
+    &.-top {
+    top: -$thick;
+    transition: transform 0.08s linear 0.43s;
+    transform-origin: left;
+    }
+    
+    &.-left {
+    left: -$thick;
+    transition: transform 0.08s linear 0.51s;
+    transform-origin: bottom;
+    }
+    
+    &.-bottom {
+    bottom: -$thick;
+    transition: transform 0.3s cubic-bezier(1,0,.65,1.01);
+    transform-origin: right;
+    }
+    }
+    
+    a:hover,
+    a:active {
+    
+    .text {
+    transform: translate3d(0,0,0);
+    transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
+    }
+    
+    &:after {
+    transform: scale3d(0,1,1);
+    right: -$thick;
+    left: -$thick;
+    transform-origin: right;
+    transition:
+    transform 0.2s cubic-bezier(1,0,.65,1.01) 0.17s,
+    right 0.2s cubic-bezier(1,0,.65,1.01),
+    left 0s 0.3s;
+    }
+    
+    .line {
+    transform: scale3d(1,1,1);
+    
+    &.-right {
+    transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.2s;
+    transform-origin: bottom;
+    }
+    
+    &.-top {
+    transition: transform 0.08s linear 0.4s;
+    transform-origin: right;
+    }
+    
+    &.-left {
+    transition: transform 0.08s linear 0.48s;
+    transform-origin: top;
+    }
+    
+    &.-bottom {
+    transition: transform 0.5s cubic-bezier(0,.53,.29,1) 0.56s;
+    transform-origin: left;
+    }
+    }
+    
+    }
+
+#footer{
+    bottom: 0;
+}
+
